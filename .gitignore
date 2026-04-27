@@ -1,0 +1,39 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Generated output (date-named run folders)
+[0-9]*th */
+[0-9]*st */
+[0-9]*nd */
+[0-9]*rd */
+
+# AWS credentials (never commit these)
+.env
+*.env
+credentials
+
+# AI Agent
+CLAUDE.md
