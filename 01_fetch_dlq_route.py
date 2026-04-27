@@ -85,6 +85,11 @@ def main() -> int:
     print(f"Loaded {len(sqs_messages)} messages from {input_file}")
     print(f"Saved {len(message_bodies)} message bodies to {BODY_OUTPUT_FILE}")
     print(f"Saved {len(route_messages)} route group(s) to {ROUTE_OUTPUT_FILE}")
+    print("Route message counts:")
+    for route, messages in sorted(
+        route_messages.items(), key=lambda item: len(item[1]), reverse=True
+    ):
+        print(f"{route}: {len(messages)}")
     return 0
 
 
