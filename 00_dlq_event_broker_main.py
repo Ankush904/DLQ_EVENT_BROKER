@@ -12,6 +12,7 @@ from botocore.exceptions import BotoCoreError, ClientError  # pyright: ignore[re
 
 PROJECT_DIR = Path(__file__).resolve().parent
 QUEUE_URL = "https://sqs.ap-south-1.amazonaws.com/927421207401/dlq_event_broker"
+# QUEUE_URL = "https://sqs.ap-south-1.amazonaws.com/927421207401/dlq_event_broker_bkp"
 REGION_NAME = "ap-south-1"
 PROFILE_NAME = "prod"
 MAX_MESSAGES = 10

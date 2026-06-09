@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import json
+from fnmatch import fnmatch
 from datetime import date
 from pathlib import Path
 from typing import Any
@@ -16,8 +17,13 @@ ROUTE_EXPORTS = {
         "/v1/recordings/recorded-conversations",
         "v1/recordings/recorded-conversations",
     ],
-    "ml_inference_results_list.json": ["/ml-inference-results"],
-    "process_callback_list.json": ["v1/recordings/process-callback"],
+    "ml_inference_results_list.json": [
+        "/ml-inference-results",
+    ],
+    "process_callback_list.json": [
+        "/v1/recordings/process-callback",
+        "v1/recordings/process-callback",
+    ],
 }
 
 JsonDict = dict[str, Any]
@@ -58,10 +64,24 @@ def collect_messages_for_routes(
     route_messages: dict[str, list[JsonDict]], routes: list[str]
 ) -> list[JsonDict]:
     messages: list[JsonDict] = []
+    seen_routes: set[str] = set()
+
     for route in routes:
-        route_items = route_messages.get(route, [])
-        if isinstance(route_items, list):
-            messages.extend(route_items)
+        matched_routes: list[str]
+        if "*" in route or "?" in route:
+            matched_routes = [
+                route_key for route_key in route_messages if fnmatch(route_key, route)
+            ]
+        else:
+            matched_routes = [route]
+
+        for matched_route in matched_routes:
+            if matched_route in seen_routes:
+                continue
+            seen_routes.add(matched_route)
+            route_items = route_messages.get(matched_route, [])
+            if isinstance(route_items, list):
+                messages.extend(route_items)
     return messages
 
 

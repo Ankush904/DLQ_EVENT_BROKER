@@ -1,0 +1,1212 @@
+{
+  "conversation_metadata": {
+    "conversation_id": 16052829,
+    "workspace_id": 2,
+    "org_id": 1,
+    "user_id": 27477,
+    "customer_id": 3710350,
+    "conversation_type_id": 7,
+    "conversation_duration": 75,
+    "participants": [
+      {
+        "participant_id": "p0",
+        "participant_type": 0,
+        "participant_name": "Agent"
+      },
+      {
+        "participant_id": "p1",
+        "participant_type": 1,
+        "participant_name": "Customer"
+      }
+    ],
+    "ml_inference_settings": {
+      "intent_analysis": true,
+      "next_steps_detection": true,
+      "pitch_quality_analysis": true,
+      "data_capture": true,
+      "generic_summary": true,
+      "sentiment_analysis": true
+    }
+  },
+  "conversation": [
+    {
+      "participant_id": "p1",
+      "conversation_text": "Hi",
+      "conversation_text_raw": "Hi",
+      "conversation_text_metadata": {
+        "words": [
+          {
+            "word": "Hi",
+            "start": 0,
+            "end": 1,
+            "conf": 100
+          }
+        ]
+      }
+    },
+    {
+      "participant_id": "p0",
+      "conversation_text": "Hi, I’m Ananya from Toprankers SuperGrads. How are you doing?",
+      "conversation_text_raw": "Hi, I’m Ananya from Toprankers SuperGrads. How are you doing?",
+      "conversation_text_metadata": {
+        "words": [
+          {
+            "word": "Hi",
+            "start": 0,
+            "end": 1,
+            "conf": 100
+          },
+          {
+            "word": "I’m",
+            "start": 0,
+            "end": 1,
+            "conf": 100
+          },
+          {
+            "word": "Ananya",
+            "start": 0,
+            "end": 1,
+            "conf": 100
+          },
+          {
+            "word": "from",
+            "start": 0,
+            "end": 1,
+            "conf": 100
+          },
+          {
+            "word": "Toprankers",
+            "start": 0,
+            "end": 1,
+            "conf": 100
+          },
+          {
+            "word": "SuperGrads",
+            "start": 0,
+            "end": 1,
+            "conf": 100
+          },
+          {
+            "word": "How",
+            "start": 0,
+            "end": 1,
+            "conf": 100
+          },
+          {
+            "word": "are",
+            "start": 0,
+            "end": 1,
+            "conf": 100
+          },
+          {
+            "word": "you",
+            "start": 0,
+            "end": 1,
+            "conf": 100
+          },
+          {
+            "word": "doing",
+            "start": 0,
+            "end": 1,
+            "conf": 100
+          }
+        ]
+      }
+    },
+    {
+      "participant_id": "p1",
+      "conversation_text": "i am good",
+      "conversation_text_raw": "i am good",
+      "conversation_text_metadata": {
+        "words": [
+          {
+            "word": "i",
+            "start": 5,
+            "end": 6,
+            "conf": 100
+          },
+          {
+            "word": "am",
+            "start": 5,
+            "end": 6,
+            "conf": 100
+          },
+          {
+            "word": "good",
+            "start": 5,
+            "end": 6,
+            "conf": 100
+          }
+        ]
+      }
+    },
+    {
+      "participant_id": "p0",
+      "conversation_text": "Nice. I saw you signed up for a demo. I’ll ask a couple of quick questions so I can understand your profile better. Is that okay?",
+      "conversation_text_raw": "Nice. I saw you signed up for a demo. I’ll ask a couple of quick questions so I can understand your profile better. Is that okay?",
+      "conversation_text_metadata": {
+        "words": [
+          {
+            "word": "Nice",
+            "start": 5,
+            "end": 6,
+            "conf": 100
+          },
+          {
+            "word": "I",
+            "start": 5,
+            "end": 6,
+            "conf": 100
+          },
+          {
+            "word": "saw",
+            "start": 5,
+            "end": 6,
+            "conf": 100
+          },
+          {
+            "word": "you",
+            "start": 5,
+            "end": 6,
+            "conf": 100
+          },
+          {
+            "word": "signed",
+            "start": 5,
+            "end": 6,
+            "conf": 100
+          },
+          {
+            "word": "up",
+            "start": 5,
+            "end": 6,
+            "conf": 100
+          },
+          {
+            "word": "for",
+            "start": 5,
+            "end": 6,
+            "conf": 100
+          },
+          {
+            "word": "a",
+            "start": 5,
+            "end": 6,
+            "conf": 100
+          },
+          {
+            "word": "demo",
+            "start": 5,
+            "end": 6,
+            "conf": 100
+          },
+          {
+            "word": "I’ll",
+            "start": 5,
+            "end": 6,
+            "conf": 100
+          },
+          {
+            "word": "ask",
+            "start": 5,
+            "end": 6,
+            "conf": 100
+          },
+          {
+            "word": "a",
+            "start": 5,
+            "end": 6,
+            "conf": 100
+          },
+          {
+            "word": "couple",
+            "start": 5,
+            "end": 6,
+            "conf": 100
+          },
+          {
+            "word": "of",
+            "start": 5,
+            "end": 6,
+            "conf": 100
+          },
+          {
+            "word": "quick",
+            "start": 5,
+            "end": 6,
+            "conf": 100
+          },
+          {
+            "word": "questions",
+            "start": 5,
+            "end": 6,
+            "conf": 100
+          },
+          {
+            "word": "so",
+            "start": 5,
+            "end": 6,
+            "conf": 100
+          },
+          {
+            "word": "I",
+            "start": 5,
+            "end": 6,
+            "conf": 100
+          },
+          {
+            "word": "can",
+            "start": 5,
+            "end": 6,
+            "conf": 100
+          },
+          {
+            "word": "understand",
+            "start": 5,
+            "end": 6,
+            "conf": 100
+          },
+          {
+            "word": "your",
+            "start": 5,
+            "end": 6,
+            "conf": 100
+          },
+          {
+            "word": "profile",
+            "start": 5,
+            "end": 6,
+            "conf": 100
+          },
+          {
+            "word": "better",
+            "start": 5,
+            "end": 6,
+            "conf": 100
+          },
+          {
+            "word": "Is",
+            "start": 5,
+            "end": 6,
+            "conf": 100
+          },
+          {
+            "word": "that",
+            "start": 5,
+            "end": 6,
+            "conf": 100
+          },
+          {
+            "word": "okay",
+            "start": 5,
+            "end": 6,
+            "conf": 100
+          }
+        ]
+      }
+    },
+    {
+      "participant_id": "p1",
+      "conversation_text": "sure",
+      "conversation_text_raw": "sure",
+      "conversation_text_metadata": {
+        "words": [
+          {
+            "word": "sure",
+            "start": 9,
+            "end": 10,
+            "conf": 100
+          }
+        ]
+      }
+    },
+    {
+      "participant_id": "p0",
+      "conversation_text": "Great. Which class are you in right now?",
+      "conversation_text_raw": "Great. Which class are you in right now?",
+      "conversation_text_metadata": {
+        "words": [
+          {
+            "word": "Great",
+            "start": 9,
+            "end": 10,
+            "conf": 100
+          },
+          {
+            "word": "Which",
+            "start": 9,
+            "end": 10,
+            "conf": 100
+          },
+          {
+            "word": "class",
+            "start": 9,
+            "end": 10,
+            "conf": 100
+          },
+          {
+            "word": "are",
+            "start": 9,
+            "end": 10,
+            "conf": 100
+          },
+          {
+            "word": "you",
+            "start": 9,
+            "end": 10,
+            "conf": 100
+          },
+          {
+            "word": "in",
+            "start": 9,
+            "end": 10,
+            "conf": 100
+          },
+          {
+            "word": "right",
+            "start": 9,
+            "end": 10,
+            "conf": 100
+          },
+          {
+            "word": "now",
+            "start": 9,
+            "end": 10,
+            "conf": 100
+          }
+        ]
+      }
+    },
+    {
+      "participant_id": "p1",
+      "conversation_text": "10th",
+      "conversation_text_raw": "10th",
+      "conversation_text_metadata": {
+        "words": [
+          {
+            "word": "10th",
+            "start": 12,
+            "end": 13,
+            "conf": 100
+          }
+        ]
+      }
+    },
+    {
+      "participant_id": "p0",
+      "conversation_text": "Got it. Are you preparing for any entrance exam right now, or do you have a career interest in mind?",
+      "conversation_text_raw": "Got it. Are you preparing for any entrance exam right now, or do you have a career interest in mind?",
+      "conversation_text_metadata": {
+        "words": [
+          {
+            "word": "Got",
+            "start": 12,
+            "end": 13,
+            "conf": 100
+          },
+          {
+            "word": "it",
+            "start": 12,
+            "end": 13,
+            "conf": 100
+          },
+          {
+            "word": "Are",
+            "start": 12,
+            "end": 13,
+            "conf": 100
+          },
+          {
+            "word": "you",
+            "start": 12,
+            "end": 13,
+            "conf": 100
+          },
+          {
+            "word": "preparing",
+            "start": 12,
+            "end": 13,
+            "conf": 100
+          },
+          {
+            "word": "for",
+            "start": 12,
+            "end": 13,
+            "conf": 100
+          },
+          {
+            "word": "any",
+            "start": 12,
+            "end": 13,
+            "conf": 100
+          },
+          {
+            "word": "entrance",
+            "start": 12,
+            "end": 13,
+            "conf": 100
+          },
+          {
+            "word": "exam",
+            "start": 12,
+            "end": 13,
+            "conf": 100
+          },
+          {
+            "word": "right",
+            "start": 12,
+            "end": 13,
+            "conf": 100
+          },
+          {
+            "word": "now",
+            "start": 12,
+            "end": 13,
+            "conf": 100
+          },
+          {
+            "word": "or",
+            "start": 12,
+            "end": 13,
+            "conf": 100
+          },
+          {
+            "word": "do",
+            "start": 12,
+            "end": 13,
+            "conf": 100
+          },
+          {
+            "word": "you",
+            "start": 12,
+            "end": 13,
+            "conf": 100
+          },
+          {
+            "word": "have",
+            "start": 12,
+            "end": 13,
+            "conf": 100
+          },
+          {
+            "word": "a",
+            "start": 12,
+            "end": 13,
+            "conf": 100
+          },
+          {
+            "word": "career",
+            "start": 12,
+            "end": 13,
+            "conf": 100
+          },
+          {
+            "word": "interest",
+            "start": 12,
+            "end": 13,
+            "conf": 100
+          },
+          {
+            "word": "in",
+            "start": 12,
+            "end": 13,
+            "conf": 100
+          },
+          {
+            "word": "mind",
+            "start": 12,
+            "end": 13,
+            "conf": 100
+          }
+        ]
+      }
+    },
+    {
+      "participant_id": "p1",
+      "conversation_text": "yes JEE",
+      "conversation_text_raw": "yes JEE",
+      "conversation_text_metadata": {
+        "words": [
+          {
+            "word": "yes",
+            "start": 20,
+            "end": 21,
+            "conf": 100
+          },
+          {
+            "word": "JEE",
+            "start": 20,
+            "end": 21,
+            "conf": 100
+          }
+        ]
+      }
+    },
+    {
+      "participant_id": "p0",
+      "conversation_text": "Okay, you're preparing for JEE. Which year are you targeting?",
+      "conversation_text_raw": "Okay, you're preparing for JEE. Which year are you targeting?",
+      "conversation_text_metadata": {
+        "words": [
+          {
+            "word": "Okay",
+            "start": 20,
+            "end": 21,
+            "conf": 100
+          },
+          {
+            "word": "youre",
+            "start": 20,
+            "end": 21,
+            "conf": 100
+          },
+          {
+            "word": "preparing",
+            "start": 20,
+            "end": 21,
+            "conf": 100
+          },
+          {
+            "word": "for",
+            "start": 20,
+            "end": 21,
+            "conf": 100
+          },
+          {
+            "word": "JEE",
+            "start": 20,
+            "end": 21,
+            "conf": 100
+          },
+          {
+            "word": "Which",
+            "start": 20,
+            "end": 21,
+            "conf": 100
+          },
+          {
+            "word": "year",
+            "start": 20,
+            "end": 21,
+            "conf": 100
+          },
+          {
+            "word": "are",
+            "start": 20,
+            "end": 21,
+            "conf": 100
+          },
+          {
+            "word": "you",
+            "start": 20,
+            "end": 21,
+            "conf": 100
+          },
+          {
+            "word": "targeting",
+            "start": 20,
+            "end": 21,
+            "conf": 100
+          }
+        ]
+      }
+    },
+    {
+      "participant_id": "p1",
+      "conversation_text": "2026",
+      "conversation_text_raw": "2026",
+      "conversation_text_metadata": {
+        "words": [
+          {
+            "word": "2026",
+            "start": 26,
+            "end": 27,
+            "conf": 100
+          }
+        ]
+      }
+    },
+    {
+      "participant_id": "p0",
+      "conversation_text": "Thanks for sharing. Are you comfortable with English, Hindi, or bilingual for your studies?",
+      "conversation_text_raw": "Thanks for sharing. Are you comfortable with English, Hindi, or bilingual for your studies?",
+      "conversation_text_metadata": {
+        "words": [
+          {
+            "word": "Thanks",
+            "start": 26,
+            "end": 27,
+            "conf": 100
+          },
+          {
+            "word": "for",
+            "start": 26,
+            "end": 27,
+            "conf": 100
+          },
+          {
+            "word": "sharing",
+            "start": 26,
+            "end": 27,
+            "conf": 100
+          },
+          {
+            "word": "Are",
+            "start": 26,
+            "end": 27,
+            "conf": 100
+          },
+          {
+            "word": "you",
+            "start": 26,
+            "end": 27,
+            "conf": 100
+          },
+          {
+            "word": "comfortable",
+            "start": 26,
+            "end": 27,
+            "conf": 100
+          },
+          {
+            "word": "with",
+            "start": 26,
+            "end": 27,
+            "conf": 100
+          },
+          {
+            "word": "English",
+            "start": 26,
+            "end": 27,
+            "conf": 100
+          },
+          {
+            "word": "Hindi",
+            "start": 26,
+            "end": 27,
+            "conf": 100
+          },
+          {
+            "word": "or",
+            "start": 26,
+            "end": 27,
+            "conf": 100
+          },
+          {
+            "word": "bilingual",
+            "start": 26,
+            "end": 27,
+            "conf": 100
+          },
+          {
+            "word": "for",
+            "start": 26,
+            "end": 27,
+            "conf": 100
+          },
+          {
+            "word": "your",
+            "start": 26,
+            "end": 27,
+            "conf": 100
+          },
+          {
+            "word": "studies",
+            "start": 26,
+            "end": 27,
+            "conf": 100
+          }
+        ]
+      }
+    },
+    {
+      "participant_id": "p1",
+      "conversation_text": "english",
+      "conversation_text_raw": "english",
+      "conversation_text_metadata": {
+        "words": [
+          {
+            "word": "english",
+            "start": 40,
+            "end": 41,
+            "conf": 100
+          }
+        ]
+      }
+    },
+    {
+      "participant_id": "p0",
+      "conversation_text": "Perfect. May I know your reason for signing up for the demo?",
+      "conversation_text_raw": "Perfect. May I know your reason for signing up for the demo?",
+      "conversation_text_metadata": {
+        "words": [
+          {
+            "word": "Perfect",
+            "start": 40,
+            "end": 41,
+            "conf": 100
+          },
+          {
+            "word": "May",
+            "start": 40,
+            "end": 41,
+            "conf": 100
+          },
+          {
+            "word": "I",
+            "start": 40,
+            "end": 41,
+            "conf": 100
+          },
+          {
+            "word": "know",
+            "start": 40,
+            "end": 41,
+            "conf": 100
+          },
+          {
+            "word": "your",
+            "start": 40,
+            "end": 41,
+            "conf": 100
+          },
+          {
+            "word": "reason",
+            "start": 40,
+            "end": 41,
+            "conf": 100
+          },
+          {
+            "word": "for",
+            "start": 40,
+            "end": 41,
+            "conf": 100
+          },
+          {
+            "word": "signing",
+            "start": 40,
+            "end": 41,
+            "conf": 100
+          },
+          {
+            "word": "up",
+            "start": 40,
+            "end": 41,
+            "conf": 100
+          },
+          {
+            "word": "for",
+            "start": 40,
+            "end": 41,
+            "conf": 100
+          },
+          {
+            "word": "the",
+            "start": 40,
+            "end": 41,
+            "conf": 100
+          },
+          {
+            "word": "demo",
+            "start": 40,
+            "end": 41,
+            "conf": 100
+          }
+        ]
+      }
+    },
+    {
+      "participant_id": "p1",
+      "conversation_text": "i wanted to try the classes",
+      "conversation_text_raw": "i wanted to try the classes",
+      "conversation_text_metadata": {
+        "words": [
+          {
+            "word": "i",
+            "start": 60,
+            "end": 61,
+            "conf": 100
+          },
+          {
+            "word": "wanted",
+            "start": 60,
+            "end": 61,
+            "conf": 100
+          },
+          {
+            "word": "to",
+            "start": 60,
+            "end": 61,
+            "conf": 100
+          },
+          {
+            "word": "try",
+            "start": 60,
+            "end": 61,
+            "conf": 100
+          },
+          {
+            "word": "the",
+            "start": 60,
+            "end": 61,
+            "conf": 100
+          },
+          {
+            "word": "classes",
+            "start": 60,
+            "end": 61,
+            "conf": 100
+          }
+        ]
+      }
+    },
+    {
+      "participant_id": "p0",
+      "conversation_text": "Okay, I'm noting down your details.",
+      "conversation_text_raw": "Okay, I'm noting down your details.",
+      "conversation_text_metadata": {
+        "words": [
+          {
+            "word": "Okay",
+            "start": 60,
+            "end": 61,
+            "conf": 100
+          },
+          {
+            "word": "Im",
+            "start": 60,
+            "end": 61,
+            "conf": 100
+          },
+          {
+            "word": "noting",
+            "start": 60,
+            "end": 61,
+            "conf": 100
+          },
+          {
+            "word": "down",
+            "start": 60,
+            "end": 61,
+            "conf": 100
+          },
+          {
+            "word": "your",
+            "start": 60,
+            "end": 61,
+            "conf": 100
+          },
+          {
+            "word": "details",
+            "start": 60,
+            "end": 61,
+            "conf": 100
+          }
+        ]
+      }
+    },
+    {
+      "participant_id": "p0",
+      "conversation_text": null,
+      "conversation_text_raw": null,
+      "conversation_text_metadata": {
+        "words": [
+          {
+            "word": "",
+            "start": 63,
+            "end": 64,
+            "conf": 100
+          }
+        ]
+      }
+    },
+    {
+      "participant_id": "p0",
+      "conversation_text": null,
+      "conversation_text_raw": null,
+      "conversation_text_metadata": {
+        "words": [
+          {
+            "word": "",
+            "start": 66,
+            "end": 67,
+            "conf": 100
+          }
+        ]
+      }
+    },
+    {
+      "participant_id": "p0",
+      "conversation_text": "Thanks for sharing the details. A counselling session looks relevant for you.\n\nWould you like me to help schedule it?",
+      "conversation_text_raw": "Thanks for sharing the details. A counselling session looks relevant for you.\n\nWould you like me to help schedule it?",
+      "conversation_text_metadata": {
+        "words": [
+          {
+            "word": "Thanks",
+            "start": 66,
+            "end": 67,
+            "conf": 100
+          },
+          {
+            "word": "for",
+            "start": 66,
+            "end": 67,
+            "conf": 100
+          },
+          {
+            "word": "sharing",
+            "start": 66,
+            "end": 67,
+            "conf": 100
+          },
+          {
+            "word": "the",
+            "start": 66,
+            "end": 67,
+            "conf": 100
+          },
+          {
+            "word": "details",
+            "start": 66,
+            "end": 67,
+            "conf": 100
+          },
+          {
+            "word": "A",
+            "start": 66,
+            "end": 67,
+            "conf": 100
+          },
+          {
+            "word": "counselling",
+            "start": 66,
+            "end": 67,
+            "conf": 100
+          },
+          {
+            "word": "session",
+            "start": 66,
+            "end": 67,
+            "conf": 100
+          },
+          {
+            "word": "looks",
+            "start": 66,
+            "end": 67,
+            "conf": 100
+          },
+          {
+            "word": "relevant",
+            "start": 66,
+            "end": 67,
+            "conf": 100
+          },
+          {
+            "word": "for",
+            "start": 66,
+            "end": 67,
+            "conf": 100
+          },
+          {
+            "word": "you",
+            "start": 66,
+            "end": 67,
+            "conf": 100
+          },
+          {
+            "word": "Would",
+            "start": 66,
+            "end": 67,
+            "conf": 100
+          },
+          {
+            "word": "you",
+            "start": 66,
+            "end": 67,
+            "conf": 100
+          },
+          {
+            "word": "like",
+            "start": 66,
+            "end": 67,
+            "conf": 100
+          },
+          {
+            "word": "me",
+            "start": 66,
+            "end": 67,
+            "conf": 100
+          },
+          {
+            "word": "to",
+            "start": 66,
+            "end": 67,
+            "conf": 100
+          },
+          {
+            "word": "help",
+            "start": 66,
+            "end": 67,
+            "conf": 100
+          },
+          {
+            "word": "schedule",
+            "start": 66,
+            "end": 67,
+            "conf": 100
+          },
+          {
+            "word": "it",
+            "start": 66,
+            "end": 67,
+            "conf": 100
+          }
+        ]
+      }
+    },
+    {
+      "participant_id": "p1",
+      "conversation_text": "sure",
+      "conversation_text_raw": "sure",
+      "conversation_text_metadata": {
+        "words": [
+          {
+            "word": "sure",
+            "start": 75,
+            "end": 76,
+            "conf": 100
+          }
+        ]
+      }
+    },
+    {
+      "participant_id": "p0",
+      "conversation_text": "Great! I can do today at 4 PM, 6 PM, or tomorrow at 11 AM. Which works best for you?",
+      "conversation_text_raw": "Great! I can do today at 4 PM, 6 PM, or tomorrow at 11 AM. Which works best for you?",
+      "conversation_text_metadata": {
+        "words": [
+          {
+            "word": "Great",
+            "start": 75,
+            "end": 76,
+            "conf": 100
+          },
+          {
+            "word": "I",
+            "start": 75,
+            "end": 76,
+            "conf": 100
+          },
+          {
+            "word": "can",
+            "start": 75,
+            "end": 76,
+            "conf": 100
+          },
+          {
+            "word": "do",
+            "start": 75,
+            "end": 76,
+            "conf": 100
+          },
+          {
+            "word": "today",
+            "start": 75,
+            "end": 76,
+            "conf": 100
+          },
+          {
+            "word": "at",
+            "start": 75,
+            "end": 76,
+            "conf": 100
+          },
+          {
+            "word": "4",
+            "start": 75,
+            "end": 76,
+            "conf": 100
+          },
+          {
+            "word": "PM",
+            "start": 75,
+            "end": 76,
+            "conf": 100
+          },
+          {
+            "word": "6",
+            "start": 75,
+            "end": 76,
+            "conf": 100
+          },
+          {
+            "word": "PM",
+            "start": 75,
+            "end": 76,
+            "conf": 100
+          },
+          {
+            "word": "or",
+            "start": 75,
+            "end": 76,
+            "conf": 100
+          },
+          {
+            "word": "tomorrow",
+            "start": 75,
+            "end": 76,
+            "conf": 100
+          },
+          {
+            "word": "at",
+            "start": 75,
+            "end": 76,
+            "conf": 100
+          },
+          {
+            "word": "11",
+            "start": 75,
+            "end": 76,
+            "conf": 100
+          },
+          {
+            "word": "AM",
+            "start": 75,
+            "end": 76,
+            "conf": 100
+          },
+          {
+            "word": "Which",
+            "start": 75,
+            "end": 76,
+            "conf": 100
+          },
+          {
+            "word": "works",
+            "start": 75,
+            "end": 76,
+            "conf": 100
+          },
+          {
+            "word": "best",
+            "start": 75,
+            "end": 76,
+            "conf": 100
+          },
+          {
+            "word": "for",
+            "start": 75,
+            "end": 76,
+            "conf": 100
+          },
+          {
+            "word": "you",
+            "start": 75,
+            "end": 76,
+            "conf": 100
+          }
+        ]
+      }
+    }
+  ]
+}
