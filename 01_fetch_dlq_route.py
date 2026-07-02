@@ -51,7 +51,13 @@ def save_json(data: Any, output_file: Path) -> None:
 
 
 def extract_message_bodies(messages: list[JsonDict]) -> list[Any]:
-    return [message.get("Body") for message in messages]
+    bodies: list[Any] = []
+    for message in messages:
+        body = message.get("Body")
+        if isinstance(body, dict):
+            body = {**body, "_ReceiptHandle": message.get("ReceiptHandle")}
+        bodies.append(body)
+    return bodies
 
 
 def group_messages_by_route(message_bodies: list[Any]) -> dict[str, list[JsonDict]]:

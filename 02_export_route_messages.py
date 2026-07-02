@@ -24,6 +24,9 @@ ROUTE_EXPORTS = {
         "/v1/recordings/process-callback",
         "v1/recordings/process-callback",
     ],
+    "llm-invocation-log.json":[
+        "api/v1/client/organisation/llm-invocation-log"
+    ]
 }
 
 JsonDict = dict[str, Any]

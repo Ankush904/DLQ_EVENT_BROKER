@@ -86,6 +86,7 @@ def transform_messages(messages: list[JsonDict]) -> list[JsonDict]:
     return [
         {
             "MessageId": message.get("MessageId"),
+            "ReceiptHandle": message.get("ReceiptHandle"),
             "Body": parse_body(message.get("Body")),
         }
         for message in messages
