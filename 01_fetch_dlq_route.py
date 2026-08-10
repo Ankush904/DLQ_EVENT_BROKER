@@ -8,6 +8,8 @@ from datetime import date
 from pathlib import Path
 from typing import Any
 
+from rich import print
+
 PROJECT_DIR = Path(__file__).resolve().parent
 INPUT_PATTERN = "sqs_messages_event_broker_*.json"
 BODY_OUTPUT_FILE = "sqs_messages_body.json"
@@ -88,14 +90,14 @@ def main() -> int:
     save_json(message_bodies, target_folder / BODY_OUTPUT_FILE)
     save_json(route_messages, target_folder / ROUTE_OUTPUT_FILE)
 
-    print(f"Loaded {len(sqs_messages)} messages from {input_file}")
-    print(f"Saved {len(message_bodies)} message bodies to {BODY_OUTPUT_FILE}")
-    print(f"Saved {len(route_messages)} route group(s) to {ROUTE_OUTPUT_FILE}")
-    print("Route message counts:")
+    print(f"[cyan]Loaded {len(sqs_messages)} messages from {input_file}[/cyan]")
+    print(f"[green]Saved {len(message_bodies)} message bodies to {BODY_OUTPUT_FILE}[/green]")
+    print(f"[green]Saved {len(route_messages)} route group(s) to {ROUTE_OUTPUT_FILE}[/green]")
+    print("[bold]Route message counts:[/bold]")
     for route, messages in sorted(
         route_messages.items(), key=lambda item: len(item[1]), reverse=True
     ):
-        print(f"{route}: {len(messages)}")
+        print(f"  {route}: [yellow]{len(messages)}[/yellow]")
     return 0
 
 

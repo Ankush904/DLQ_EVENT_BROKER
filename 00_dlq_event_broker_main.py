@@ -9,10 +9,11 @@ from typing import Any
 
 import boto3  # pyright: ignore[reportMissingImports]
 from botocore.exceptions import BotoCoreError, ClientError  # pyright: ignore[reportMissingImports]
+from rich import print
 
 PROJECT_DIR = Path(__file__).resolve().parent
 QUEUE_URL = "https://sqs.ap-south-1.amazonaws.com/927421207401/dlq_event_broker"
-# QUEUE_URL = "https://sqs.ap-south-1.amazonaws.com/927421207401/dlq_event_broker_bkp"
+# QUEUE_URL = "https://sqs.ap-south-1.amazonaws.com/927421207401/dlq_bulk_sync_broker"
 REGION_NAME = "ap-south-1"
 PROFILE_NAME = "prod"
 MAX_MESSAGES = 10
@@ -68,7 +69,7 @@ def fetch_messages() -> list[JsonDict]:
             return messages
 
         messages.extend(batch)
-        print(f"Fetched {len(messages)} message(s) so far...")
+        print(f"[cyan]Fetched {len(messages)} message(s) so far...[/cyan]")
 
 
 def parse_body(body: Any) -> Any:
@@ -105,15 +106,15 @@ def main() -> int:
     try:
         raw_messages = fetch_messages()
     except (BotoCoreError, ClientError) as exc:
-        print(f"Failed to fetch messages: {exc}")
+        print(f"[red]Failed to fetch messages: {exc}[/red]")
         return 1
 
     messages = transform_messages(raw_messages)
     save_json(messages, output_file)
 
-    print(f"Saved {len(messages)} message(s) to {output_file}.")
+    print(f"[green]Saved {len(messages)} message(s) to {output_file}.[/green]")
     if not messages:
-        print("No messages available in DLQ.")
+        print("[yellow]No messages available in DLQ.[/yellow]")
     return 0
 
 

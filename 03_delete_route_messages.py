@@ -10,16 +10,20 @@ from typing import Any
 
 import boto3  # pyright: ignore[reportMissingImports]
 from botocore.exceptions import BotoCoreError, ClientError  # pyright: ignore[reportMissingImports]
+from rich import print
 
 PROJECT_DIR = Path(__file__).resolve().parent
 QUEUE_URL = "https://sqs.ap-south-1.amazonaws.com/927421207401/dlq_event_broker"
+# QUEUE_URL = "https://sqs.ap-south-1.amazonaws.com/927421207401/dlq_bulk_sync_broker"
 REGION_NAME = "ap-south-1"
 PROFILE_NAME = "prod"
 ROUTE_MESSAGES_FILE = "sqs_routes_messages.json"
 
 # Routes whose messages have been exported locally and should now be purged from SQS.
 ROUTES_TO_DELETE = [
-    "api/v1/client/organisation/llm-invocation-log",
+    "api/v1/client/conversation/analysis/data-capture-sync",
+    "api/v1/client/conversation/summary",
+    "api/v1/conversation/pitch-audit-analysis/summary"
 ]
 
 JsonDict = dict[str, Any]
@@ -90,7 +94,7 @@ def delete_messages(receipt_handles: list[str]) -> int:
         response = sqs.delete_message_batch(QueueUrl=QUEUE_URL, Entries=entries)
         deleted += len(response.get("Successful", []))
         for failure in response.get("Failed", []):
-            print(f"Failed to delete message: {failure}")
+            print(f"[red]Failed to delete message: {failure}[/red]")
 
     return deleted
 
@@ -101,22 +105,22 @@ def main() -> int:
     receipt_handles = collect_receipt_handles(route_messages, ROUTES_TO_DELETE)
 
     if not receipt_handles:
-        print("No messages found for the given routes. Nothing to delete.")
+        print("[yellow]No messages found for the given routes. Nothing to delete.[/yellow]")
         return 0
 
     try:
         deleted = delete_messages(receipt_handles)
     except (BotoCoreError, ClientError) as exc:
-        print(f"Failed to delete messages: {exc}")
+        print(f"[red]Failed to delete messages: {exc}[/red]")
         return 1
 
-    print(f"Deleted {deleted}/{len(receipt_handles)} message(s) from SQS.")
+    print(f"[green]Deleted {deleted}/{len(receipt_handles)} message(s) from SQS.[/green]")
     return 0
 
 
 def _self_check() -> None:
     sample = {
-        "api/v1/client/organisation/llm-invocation-log": [
+        ROUTES_TO_DELETE[0]: [
             {"_ReceiptHandle": "h1"},
             {"_ReceiptHandle": "h2"},
         ],
