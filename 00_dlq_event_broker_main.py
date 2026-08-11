@@ -11,9 +11,10 @@ import boto3  # pyright: ignore[reportMissingImports]
 from botocore.exceptions import BotoCoreError, ClientError  # pyright: ignore[reportMissingImports]
 from rich import print
 
+from queues import select_queue
+
 PROJECT_DIR = Path(__file__).resolve().parent
-QUEUE_URL = "https://sqs.ap-south-1.amazonaws.com/927421207401/dlq_event_broker"
-# QUEUE_URL = "https://sqs.ap-south-1.amazonaws.com/927421207401/dlq_bulk_sync_broker"
+QUEUE_URL = select_queue()
 REGION_NAME = "ap-south-1"
 PROFILE_NAME = "prod"
 MAX_MESSAGES = 10

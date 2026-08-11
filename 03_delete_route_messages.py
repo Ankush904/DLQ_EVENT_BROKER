@@ -12,18 +12,17 @@ import boto3  # pyright: ignore[reportMissingImports]
 from botocore.exceptions import BotoCoreError, ClientError  # pyright: ignore[reportMissingImports]
 from rich import print
 
+from queues import select_queue
+
 PROJECT_DIR = Path(__file__).resolve().parent
-QUEUE_URL = "https://sqs.ap-south-1.amazonaws.com/927421207401/dlq_event_broker"
-# QUEUE_URL = "https://sqs.ap-south-1.amazonaws.com/927421207401/dlq_bulk_sync_broker"
+QUEUE_URL = select_queue()
 REGION_NAME = "ap-south-1"
 PROFILE_NAME = "prod"
 ROUTE_MESSAGES_FILE = "sqs_routes_messages.json"
 
 # Routes whose messages have been exported locally and should now be purged from SQS.
 ROUTES_TO_DELETE = [
-    "api/v1/client/conversation/analysis/data-capture-sync",
-    "api/v1/client/conversation/summary",
-    "api/v1/conversation/pitch-audit-analysis/summary"
+    "api/v1/client/organisation/llm-invocation-log"
 ]
 
 JsonDict = dict[str, Any]
