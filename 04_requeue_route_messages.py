@@ -131,3 +131,20 @@ def main() -> int:
     print(f"[green]Requeued {requeued}/{len(messages)} message(s) to {source_url}[/green]")
     print(f"[green]Purged {purged}/{len(messages)} message(s) from {DLQ_URL}[/green]")
     return 0
+
+
+def _self_check() -> None:
+    assert source_queue_url("https://sqs.ap-south-1.amazonaws.com/1/dlq_event_broker") == (
+        "https://sqs.ap-south-1.amazonaws.com/1/event_broker"
+    )
+    try:
+        source_queue_url("https://sqs.ap-south-1.amazonaws.com/1/not_a_dlq")
+    except ValueError:
+        pass
+    else:
+        raise AssertionError("expected ValueError for non dlq_ queue")
+
+
+if __name__ == "__main__":
+    _self_check()
+    raise SystemExit(main())
