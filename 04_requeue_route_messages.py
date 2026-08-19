@@ -1,21 +1,24 @@
 """Requeue an exported route's messages back to the source queue and purge them from the DLQ.
 
 Usage:
-    python 04_requeue_route_messages.py <exported_file.json> [queue_name]
+    python 04_requeue_route_messages.py <exported_file.json> [queue_name] [delay_seconds]
 
 <exported_file.json> is a file under today's messages/ folder (as produced by
 02_export_route_messages.py). [queue_name] selects the DLQ (see queues.py),
 defaulting to event_broker; the source queue is derived by dropping its
-"dlq_" prefix.
+"dlq_" prefix. [delay_seconds] pauses that long between individual messages
+(messages are sent one at a time instead of in batches of 10).
 """
 
 from __future__ import annotations
 
 import json
 import sys
+import time
 from datetime import date
 from pathlib import Path
 from typing import Any
+from tqdm import tqdm
 
 import boto3  # pyright: ignore[reportMissingImports]
 from botocore.exceptions import BotoCoreError, ClientError  # pyright: ignore[reportMissingImports]
@@ -71,13 +74,17 @@ def create_sqs_client() -> Any:
 
 
 def requeue_and_purge(
-    sqs: Any, messages: list[JsonDict], source_url: str, dlq_url: str
+    sqs: Any, messages: list[JsonDict], source_url: str, dlq_url: str, delay: float = 0.0
 ) -> tuple[int, int]:
     requeued = 0
     purged = 0
+    # ponytail: delay > 0 forces batch size 1 so the pause lands between messages
+    step = 1 if delay else 10
 
-    for i in range(0, len(messages), 10):
-        batch = messages[i : i + 10]
+    for i in tqdm(range(0, len(messages), step)):
+        if delay and i:
+            time.sleep(delay)
+        batch = messages[i : i + step]
         send_entries = []
         handles: list[tuple[str, str | None]] = []
         for idx, message in enumerate(batch):
@@ -108,10 +115,11 @@ def requeue_and_purge(
 
 def main() -> int:
     if len(sys.argv) < 2:
-        print("[red]Usage: python 04_requeue_route_messages.py <exported_file.json> [queue_name][/red]")
+        print("[red]Usage: python 04_requeue_route_messages.py <exported_file.json> [queue_name] [delay_seconds][/red]")
         return 1
 
-    file_name = "send_analytics.json"
+    file_name = sys.argv[1]
+    delay = float(sys.argv[3]) if len(sys.argv) > 3 else 0.0
     target_folder = get_today_folder()
     messages = load_messages(target_folder, file_name)
 
@@ -123,7 +131,7 @@ def main() -> int:
 
     try:
         sqs = create_sqs_client()
-        requeued, purged = requeue_and_purge(sqs, messages, source_url, DLQ_URL)
+        requeued, purged = requeue_and_purge(sqs, messages, source_url, DLQ_URL, delay)
     except (BotoCoreError, ClientError) as exc:
         print(f"[red]Failed to requeue messages: {exc}[/red]")
         return 1

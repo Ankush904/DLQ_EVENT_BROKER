@@ -8,7 +8,7 @@ QUEUE_URLS = {
     "event_broker": "https://sqs.ap-south-1.amazonaws.com/927421207401/dlq_event_broker",
     "bulk_sync_broker": "https://sqs.ap-south-1.amazonaws.com/927421207401/dlq_bulk_sync_broker",
 }
-DEFAULT_QUEUE = "event_broker"
+DEFAULT_QUEUE = "bulk_sync_broker"
 
 
 def select_queue(args: list[str] | None = None) -> str:
